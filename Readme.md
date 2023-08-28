@@ -86,3 +86,4 @@ To do:
 
 - withdraw all available founds functionality
 - visual improvement for good user experiance while waiting for contract execution
+
