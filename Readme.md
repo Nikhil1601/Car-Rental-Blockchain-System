@@ -49,3 +49,40 @@
 - withdraw is possible only when user have no due or active car rented
 - payment to contract for due from deposited amount - not directly from wallet
 - geting user informations with view functions (out of charge)
+## Screenshots
+
+![Example screenshot](./img/home.png)
+![Example screenshot](./img/login.png)
+![Example screenshot](./img/dashboard.png)
+![Example screenshot](./img/afterPickUp.png)
+![Example screenshot](./img/Repay.png)
+![Example screenshot](./img/afterRepay.png)
+![Example screenshot](./img/transactionList.png)
+
+## Setup
+
+npm init
+npm inastall
+download and use metamask extension for browser
+prepare .env file based on .env.example.
+npx hardhat run scripts/deploy.js --network goerli
+
+## Project Status
+
+Project is: in progress
+
+<!-- / complete / no longer being worked on. If you are no longer working on it, provide reasons why. -->
+
+## Room for Improvement
+
+<!-- Include areas you believe need improvement / could be improved. Also add TODOs for future development. -->
+
+Room for improvement:
+
+- write more tests for contract
+- add more information for user while exectuting contrract
+
+To do:
+
+- withdraw all available founds functionality
+- visual improvement for good user experiance while waiting for contract execution
