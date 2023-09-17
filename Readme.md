@@ -51,8 +51,8 @@
 - geting user informations with view functions (out of charge)
 ## Screenshots
 
-![Example screenshot](./img/Home.png)
-![Example screenshot](./img/Login.png)
+![Example screenshot](./img/home.png)
+![Example screenshot](./img/login.png)
 ![Example screenshot](./img/About.png)
 ![Example screenshot](./img/RentACar.png)
 ![Example screenshot](./img/Wallet.png)
