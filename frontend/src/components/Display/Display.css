@@ -1,0 +1,22 @@
+.cards{
+    margin-top:7px;
+}
+.balance{
+    border: 5px solid #8D5524;
+    background-color: #F1C27D;
+    border-radius: 20px;
+    font-size: 30px;
+    color: #8D5524;
+    padding: 15px 50px;
+    font-weight: 600;
+}
+
+.balance .ethsymbl{
+    text-align: center;
+    font-size: 50px;
+}
+.balance:hover{
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    transform: scale(1.03);
+}

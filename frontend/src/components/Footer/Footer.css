@@ -1,0 +1,11 @@
+footer{
+    background-color: #e0ac69;
+}
+footer h5{
+    color: #8D5524;
+}
+.rule-divider{
+    border-top-color:#8D5524;
+    border-top-style: solid;
+    border-top-width: 1px;
+}

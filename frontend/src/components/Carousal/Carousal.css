@@ -1,0 +1,17 @@
+.carousel-caption h5{
+    font-size: 3rem;
+    color: rgb(212, 255, 0);
+    padding-bottom: 5%;
+    font-weight: 700;
+}
+.carousel-caption p{
+    font-size: 2rem;
+    color: #ffffff;
+    padding-bottom: 2%;
+    font-weight: 600;
+}
+
+/* .carousel-item img{
+    filter: blur(4px);
+
+}  */
