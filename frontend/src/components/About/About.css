@@ -1,0 +1,31 @@
+.main{
+    background-color: #ffdbac;
+    width: 100%;
+}
+
+.heading{
+    color: #8d5524;
+    font-weight: bold;
+    padding-top: 30px;
+    margin-left: 80px;
+    font-size: 30px;
+    
+}
+
+section{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 64px;
+    gap: 50px;   
+}
+.card-body{
+    padding: 5px;
+    font-size: 25px;
+    background-color: #c68642;
+}
+.card-title , .card-text{
+    text-align: center;
+    color: #fecf67;
+    background-color: #c68642;
+    padding: 5px;   
+}

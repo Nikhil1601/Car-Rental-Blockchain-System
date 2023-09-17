@@ -1,12 +1,14 @@
-import './RentCar.scss';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import React from 'react'
+import Display from '../Display/Display'
+// import Form from '../Form/Form'
+import './Wallet.css'
+import {FaEthereum} from 'react-icons/fa';
+import {AiFillCar} from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { useSelector } from 'react-redux';
 
-export default function RentCar({ contract }) {
+export default function Wallet({contract}) {
   const [ethDepositAmount, setEthDepositAmount] = useState('');
   const [balance, setBalance] = useState('0.0');
   const [due, setDue] = useState('0');
@@ -16,13 +18,13 @@ export default function RentCar({ contract }) {
 
   const currentAddress = useSelector((state) => state.currentAddress.address);
 
-  useEffect(() => {
+  setInterval(() => {
     getBalanceOfRenter().catch(console.error);
     getParamsOfRenter().catch(console.error);
     if (!isActive) {
       getTotalDuration().catch(console.error);
     }
-  });
+  },1000);
 
   const getBalanceOfRenter = async () => {
     const balance = await contract.balanceOfRenter(currentAddress);
@@ -70,79 +72,59 @@ export default function RentCar({ contract }) {
     await repay.wait();
     getTotalDuration().catch(console.error);
   };
-
   return (
-    <div className='container rent-car-page'>
-      <div className='welcome-text'>
-        <h1> Hey {name ? name : 'mate'}! Here are your pulpit:</h1>
+    <div className="container wallet">
+      <div className="heading mb-5"><h1>About CBMS</h1></div>
+      <div className="d-flex justify-content-evenly">
+        <Display Icon={<FaEthereum/>} Title='Balance' Measure={balance}/>
+        <Display Icon={<AiFillCar/>} Title='Dues' Measure={due}/>
+        <Display Icon={<FaEthereum/>} Title='Rent Time' Measure={totalDuration+' min'}/>
+        
       </div>
-      <div className='pulpit-stats'>
-        <div className='pulpit-box'>
-          <p>Balance</p>
-          <pre>{balance}</pre>
-          <AccountBalanceWalletIcon className='pulpit-icon' />
-        </div>
-        <div className='pulpit-box'>
-          <p>Eth Due</p>
-          <pre>{due}</pre>
-          <AttachMoneyIcon className='pulpit-icon' />
-        </div>
-        <div className={!isActive ? 'pulpit-box' : 'pulpit-box active'}>
-          <p>Rent time</p>
-          <pre>{totalDuration} min</pre>
-          <AccessTimeIcon className='pulpit-icon' />
-        </div>
-      </div>
-      <div className='pulpit-payments'>
-        <div className='deposit-eth-box'>
-          <form>
-            <h2>Credit Your Account</h2>
-            <input
-              className='payment-input'
-              type='number'
-              placeholder='eth amount'
-              required
-              onChange={(e) => {
-                setEthDepositAmount(e.target.value);
-              }}
-              value={ethDepositAmount}
-            ></input>
-            <button
-              className='button-class form-deposit-button'
-              type='button'
-              onClick={() => {
-                handleDepositEth();
-              }}
-            >
-              Deposit
-            </button>
-          </form>
-        </div>
-        <div className='deposit-eth-box'>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
+      {/* <Form setEthDepositAmount={setEthDepositAmount} ethDepositAmount={ethDepositAmount} handleDepositEth={handleDepositEth}
+      due={due} handleRepay={handleRepay}/> */}
+      <div className='form-container'>
+        <form className='form1'>
+          <h2>Credit Your Account</h2>
+          <input
+            className='payment-input'
+            type='number'
+            placeholder='ethereum amount'
+            required
+            onChange={(e) => {
+              setEthDepositAmount(e.target.value);
+            }}
+            value={ethDepositAmount}
+          ></input>
+          <button
+            className='button-class form-deposit-button'
+            type='button'
+            onClick={() => {
+              handleDepositEth();
             }}
           >
-            <h2>Repay Your Due</h2>
-            <input
-              className='payment-input'
-              type='number'
-              placeholder='eth amount'
-              required
-              disabled
-              value={due}
-            ></input>
-            <button
-              className='button-class form-deposit-button'
-              type='submit'
-              onClick={() => handleRepay()}
-            >
-              Repay
-            </button>
-          </form>
+            Deposit
+          </button>
+        </form>
+        <form onSubmit={(e) => {e.preventDefault();}}>
+          <h2>Repay Your Due</h2>
+          <input
+            className='payment-input'
+            type='number'
+            placeholder='eth amount'
+            required
+            disabled
+            value={due}
+          ></input>
+          <button
+            className='button-class form-deposit-button'
+            type='submit'
+            onClick={() => handleRepay()}
+          >
+            Repay
+          </button>
+        </form>
         </div>
-      </div>
     </div>
-  );
+  )
 }

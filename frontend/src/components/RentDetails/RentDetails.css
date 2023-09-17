@@ -1,0 +1,21 @@
+.rentdetails {
+    display: flex;
+    flex-direction: column;
+    padding:5vh 0vh;
+    background-color:#ffdbac;
+}
+
+.top-heading {
+    font-size: 34px;
+    margin-bottom: 20px;
+    margin-left: 5vw;
+    color: #8D5524;
+    font-size: 70px;
+}
+  
+.cards-container {
+    display: grid;
+    grid-template-columns:auto auto auto;
+    justify-content: space-evenly;
+    gap: auto;
+}
