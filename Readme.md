@@ -76,7 +76,6 @@ Project is: in progress
 
 <!-- Include areas you believe need improvement / could be improved. Also add TODOs for future development. -->
 
-Room for improvement:
 
 - write more tests for contract
 - add more information for user while exectuting contrract
