@@ -87,6 +87,7 @@ Project is: in progress
 
 - write more tests for contract
 - add more information for user while exectuting contrract
+- using new blockchain platform like Polygon
 
 To do:
 
