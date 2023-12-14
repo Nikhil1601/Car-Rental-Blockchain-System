@@ -1,6 +1,6 @@
 # Car Rental Blockchain System
 
-> Blockchain web application based on smart contracts in solidity. Contract deployed on Goerli network at this moment. 
+> Blockchain based web application based on smart contracts in solidity. Contract deployed on Goerli network at this moment. 
 ## Table of Contents
 
 - [General Info](#general-information)
